@@ -1,15 +1,25 @@
 #include<stdio.h>
 
-void display(){  // function declaration
-	printf("This is Display Function");	
-	display();
+void fun(){
+	
+	printf("This is fun function");
+
+	fun();
+}
+
+void print(int x){
+	// int x =23;
+	
+	if(x>0){
+		printf("%d ",x);
+		print(x-1);
+	}	
 }
 
 main(){
 	
-	// recursive function
+	// recursive 
+	// when function calls it self 
+	print(23);
 	
-	// function that calls its self
-	
-	display();  // function call
 }
