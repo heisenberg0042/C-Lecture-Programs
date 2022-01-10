@@ -1,43 +1,46 @@
 #include<stdio.h>
 
+void sum(int x,int y){   // pass by value
+	printf("%d\n",x+y);
+}
+
+void sum2(int *p,int *q){   // pass by reference // address
+	
+	printf("%d\n",( *p + *q ));
+}
+
+void sum3(int *f , int *g){
+	
+	printf("%d\n",( *f + *g ));
+	
+}
+
 main(){
 	
-	// pointer
+	int *p;
 	
-	// to store location of other variable  // pointer is define by *
-	
-	// scanf("%d",&n);
-	
-	
-	int x =25;
-	
-	int *p;       // pointer
+	int x =23;
 	
 	p = &x;
 	
+	
 	printf("%p\n",p);
 	
-	printf("%p\n",&x);
-	printf("%d\n",x);
+	sum(12,13);
 	
-	printf("%p\n",&p);
+	///////////////////////////
+	int a =12;
+	int b =13;
 	
-	// find the value from pointer  // 
+	sum2(&a,&b);
 	
-	printf("%d\n",*p);
+	///////////////////////////////
 	
-	//////////////////////////////////////////
+	int n = 11;
+	int m = 12;
 	
-	printf("%d\n",*(&x));
+	int *l = &n;
+	int *k = &m;
 	
-	printf("%p\n",&(*(&x)));
-	
-	printf("%d\n",*(&(*(&(*p)))));
-	
-	//	printf("",*x);
-
-	printf("%d",(*(&(*p))));
-	
-	
-	
+	sum3(l,k);
 }
